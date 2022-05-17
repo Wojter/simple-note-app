@@ -32,8 +32,13 @@ class Notes extends React.Component {
 
     }
 
-    addNote(note ) {
-        const notes = [...this.state.notes]
+    addNote(note) {
+        const notes = [...this.state.notes];
+        notes.push(note);
+        this.setState({ notes });
+
+        setTitle('');
+        setBody('');
     }
 
     render() {
@@ -41,7 +46,8 @@ class Notes extends React.Component {
             <div>
                 <p>Moje notatki:</p>
 
-                <NewNote />
+                <NewNote 
+                onAdd={(note) => this.addNote(note)}/>
 
                 {this.state.notes.map(note => (
                     <Note
