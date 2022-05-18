@@ -5,15 +5,15 @@ function Note(props) {
     const [showDesc, setShowDesc] = useState(false);
     
     const toggleDesc = () => {
-        console.log("klik");
         setShowDesc(!showDesc);
     };
 
     const editHandler = () => {
+        console.log(props.id);
         props.onEdit({
             title: props.title, 
             body: props.body, 
-            id: props.id
+            _id: props.id
         });        
     }
 
