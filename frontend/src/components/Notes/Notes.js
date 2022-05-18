@@ -37,8 +37,6 @@ class Notes extends React.Component {
         notes.push(note);
         this.setState({ notes });
 
-        setTitle('');
-        setBody('');
     }
 
     render() {
