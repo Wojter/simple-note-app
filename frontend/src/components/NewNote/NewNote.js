@@ -34,10 +34,12 @@ function NewNote (props) {
             <label>Tytuł:</label>
             <input 
                 type='text'
+                value={title}
                 onChange={changeTitleHandler} />
             <label>Opis:</label>
             <input 
                 type="text"
+                value={desc}
                 onChange={changeDescHandler} />
 
             <button onClick={()=> addNote() }>Dodaj notatkę</button>
