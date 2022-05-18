@@ -4,15 +4,13 @@ class noteActions {
     async saveNote(req, res) {
         const title = req.body.title;
         const body = req.body.body;
-        let notel
+        let note;
         try {
         note = new Note ({ title, body });
         await note.save();           
         } catch (error) {
             return res.status(422).json({ message: error.message})
         }
-
-  
         // newNote.save().then(()=> {
         //     console.log('notatka została zpisana')
         // });
@@ -26,7 +24,7 @@ class noteActions {
         // } catch (err) {
         //     return res.status(500).json({ message: err.message });
         // }
-            console.log(doc);
+        // console.log(doc);
             res.status(200).json(doc);
     }
     async getNote (req, res) {
